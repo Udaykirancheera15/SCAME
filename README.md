@@ -96,11 +96,6 @@ Contributions are welcome. Please open an issue to discuss ideas before submitti
 2. Add tests and documentation for your changes
 3. Open a pull request describing the motivation and impact
 
-## License
-
-This repository is provided for research purposes. Please add a LICENSE file (e.g., MIT, Apache-2.0) if you want to permit reuse under an explicit license. If you want me to add a LICENSE file, tell me which license to use and I will create it.
-
-
 ## Contact
 
 Maintainer: Udaykirancheera15
