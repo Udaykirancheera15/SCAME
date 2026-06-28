@@ -23,6 +23,7 @@ Memristive engines are an emerging class of hardware accelerators with promising
 1. Clone the repository
 
    git clone https://github.com/Udaykirancheera15/SCAME.git
+   
    cd SCAME
 
 2. Create a virtual environment (recommended)
