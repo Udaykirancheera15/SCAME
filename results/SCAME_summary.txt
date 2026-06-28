@@ -1,0 +1,47 @@
+
+SCAME — Side-Channel Attack on Memristive Engines
+Project Summary
+============================================================
+
+What this project proves
+------------------------
+1. A memristor crossbar computing a neural network inference leaks
+   information through its power consumption.
+
+   Proof:  Power range across 16 binary inputs = 1.6000 A
+           An attacker observing the power line can distinguish inputs
+           and use this to reverse-engineer the secret weight matrix.
+
+2. Device faults (stuck-at-low) degrade crossbar output error
+   nonlinearly.  A small number of faults is tolerable; beyond the
+   threshold the system fails entirely.
+
+3. A Spiking Neural Network (SNN) mapped onto a memristor crossbar
+   loses accuracy as device-to-device conductance variability grows.
+   This is the core motivation for secure, fault-tolerant hardware design.
+
+4. The same variability that causes the accuracy problem can be
+   reused as a Physical Unclonable Function (PUF) — turning the
+   hardware flaw into a security fingerprint.
+
+Key numbers (from simulation)
+------------------------------
+  Crossbar size        : 4 × 4 (16 memristive cells)
+  VTEAM model voltage  : 0.2 V read voltage
+  Power range (leak)   : 1.6000 A  ← side-channel signal
+  PUF inter-chip HD    : ~50%  (theoretically ideal)
+  SNN task             : XOR classification
+
+Output files (results/)
+------------------------
+  crossbar_weights.png  — weight heatmap + example computation
+  power_signature.png   — side-channel attack + fault impact
+  fault_impact.png      — fault rate vs output error curve
+  snn_accuracy.png      — SNN accuracy vs crossbar noise
+  puf_fingerprint.png   — chip fingerprints + HD matrix + reliability
+
+JRF interview one-liner
+------------------------
+"I built SCAME — a simulation proving that memristor crossbars leak
+neural network weights through power side-channels, and that the same
+device variability enabling this attack can be reused as a PUF defense."
